@@ -18,8 +18,8 @@ type bufferedLogger struct {
 	logEntriesMutex *sync.RWMutex
 }
 
-// NewBuffered - Buffers the log entries up to MAX-ENTRIES
-func NewBuffered(logger logging.Logger, config BufferConfig) logging.Logger {
+// NewBufferedLogger - Buffers the log entries up to MAX-ENTRIES
+func NewBufferedLogger(logger logging.Logger, config BufferConfig) logging.Logger {
 	return &bufferedLogger{
 		logger:          logger,
 		config:          config,
