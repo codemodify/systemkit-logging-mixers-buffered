@@ -12,14 +12,14 @@ type BufferConfig struct {
 }
 
 type bufferedLogger struct {
-	logger          logging.Logger
+	logger          logging.CoreLogger
 	config          BufferConfig
 	logEntries      []logging.LogEntry
 	logEntriesMutex *sync.RWMutex
 }
 
 // NewBufferedLogger - Buffers the log entries up to MAX-ENTRIES
-func NewBufferedLogger(logger logging.Logger, config BufferConfig) logging.Logger {
+func NewBufferedLogger(logger logging.CoreLogger, config BufferConfig) logging.CoreLogger {
 	return &bufferedLogger{
 		logger:          logger,
 		config:          config,
